@@ -5,7 +5,7 @@ console.log('🚀 Phoenix Professionals Contact JS Loading...');
 
 // Backend Configuration
 const BACKEND_CONFIG = {
-    API_URL: 'http://localhost:5000/api/contact',
+    API_URL: '/api/contact',
     TIMEOUT: 10000,
     RETRY_COUNT: 2,
     RETRY_DELAY: 1000
