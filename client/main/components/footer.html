@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Footer Component</title>
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Footer CSS -->
+    <link rel="stylesheet" href="../css/footer.css">
+</head>
+<body>
+    <footer class="footer">
+        <a href="#" class="back-to-top">
+            <i class="fas fa-arrow-up"></i>
+        </a>
+        
+        <div class="footer-container">
+            <!-- Company Info -->
+            <div class="footer-company">
+                <div class="footer-logo">
+                    <span class="footer-logo-text">
+                        <span class="gold">Phoenix</span>
+                        <span class="white">Professionals</span>
+                    </span>
+                </div>
+                <p class="footer-tagline">
+                    Your trusted partner for accounting, taxation, and compliance solutions.
+                </p>
+                <div class="footer-contact">
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <span>professionalsphoenix@gmail.com</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <span>+91-8076 551 974</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>India</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Desktop Links -->
+            <div class="footer-desktop-links">
+                <div class="footer-links-section">
+                    <h4 class="footer-section-title">Quick Links</h4>
+                    <ul class="footer-links-list">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-links-section">
+                    <h4 class="footer-section-title">Our Services</h4>
+                    <ul class="footer-links-list">
+                        <li><a href="#">Accounting & Bookkeeping</a></li>
+                        <li><a href="#">Income Tax Services</a></li>
+                        <li><a href="#">GST Filing</a></li>
+                        <li><a href="#">Business Registration</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Mobile/Tablet Dropdown Links -->
+            <div class="footer-mobile-dropdown">
+                <div class="footer-dropdown">
+                    <button class="footer-dropdown-btn">
+                        <span>Quick Links & Services</span>
+                        <i class="fas fa-chevron-down dropdown-icon"></i>
+                    </button>
+                    <div class="footer-dropdown-content">
+                        <div class="dropdown-section">
+                            <h5>Quick Links</h5>
+                            <a href="index.html"><i class="fas fa-home"></i> Home</a>
+                            <a href="services.html"><i class="fas fa-briefcase"></i> Services</a>
+                            <a href="about.html"><i class="fas fa-info-circle"></i> About Us</a>
+                            <a href="contact.html"><i class="fas fa-envelope"></i> Contact</a>
+                        </div>
+                        <div class="dropdown-section">
+                            <h5>Our Services</h5>
+                            <a href="#"><i class="fas fa-chart-line"></i> Accounting</a>
+                            <a href="#"><i class="fas fa-file-invoice-dollar"></i> Income Tax</a>
+                            <a href="#"><i class="fas fa-receipt"></i> GST Services</a>
+                            <a href="#"><i class="fas fa-building"></i> Business Registration</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Social & Newsletter -->
+            <div class="footer-social-newsletter">
+                <div>
+                    <h4 class="footer-section-title">Follow Us</h4>
+                    <div class="social-links">
+                        <a href="#" class="social-link" aria-label="Facebook">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="social-link" aria-label="LinkedIn">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="#" class="social-link" aria-label="Twitter">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="footer-section-title">Newsletter</h4>
+                    <p>Subscribe for financial tips</p>
+                    <form class="newsletter-form" id="newsletterForm">
+                        <input type="email" class="newsletter-input" placeholder="Your email" required>
+                        <button type="submit" class="newsletter-btn">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <!-- Bottom Bar -->
+        <div class="footer-bottom">
+            <div class="footer-copyright">
+                © 2024 Phoenix Professionals. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <!-- Footer JS -->
+    <script src="../js/footer.js"></script>
+</body>
+</html>

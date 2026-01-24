@@ -1,0 +1,446 @@
+/* Save this as footer.css */
+/* FOOTER STYLES */
+/* FOOTER STYLES - Updated for new structure */
+:root {
+    --black: #0d0d0d;
+    --black-soft: #141414;
+    --gold: #f2c94c;
+    --gold-soft: #f7d774;
+    --white: #ffffff;
+    --text-muted: #cccccc;
+}
+
+.footer {
+    background: linear-gradient(135deg, var(--black), #0a0a0a);
+    color: var(--white);
+    padding: 50px 0 20px;
+    margin-top: auto;
+    width: 100%;
+    border-top: 3px solid var(--gold);
+    position: relative;
+}
+
+/* ... rest of footer.css remains same ... */
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 2fr 2fr 1.5fr;
+    gap: 40px;
+    padding: 0 20px;
+}
+
+/* Company Info */
+.footer-company {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.footer-logo-text {
+    font-size: 24px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    line-height: 1.2;
+}
+
+.footer-logo-text .gold {
+    color: var(--gold);
+}
+
+.footer-logo-text .white {
+    color: var(--white);
+}
+
+.footer-tagline {
+    font-size: 14px;
+    color: var(--text-muted);
+    line-height: 1.5;
+}
+
+.footer-contact {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 13px;
+    color: var(--text-muted);
+}
+
+.contact-item i {
+    color: var(--gold);
+    width: 14px;
+    font-size: 14px;
+}
+
+/* Desktop Links */
+.footer-desktop-links {
+    display: flex;
+    gap: 40px;
+}
+
+.footer-links-section {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.footer-section-title {
+    font-size: 16px;
+    color: var(--gold);
+    margin-bottom: 8px;
+    font-weight: 600;
+}
+
+.footer-links-list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    list-style: none;
+}
+
+.footer-links-list a {
+    color: var(--text-muted);
+    text-decoration: none;
+    font-size: 13px;
+    transition: all 0.3s ease;
+}
+
+.footer-links-list a:hover {
+    color: var(--gold);
+    padding-left: 5px;
+}
+
+/* Mobile/Tablet Dropdown Links */
+.footer-mobile-dropdown {
+    display: none;
+}
+
+.footer-dropdown {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 10px;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    margin-bottom: 20px;
+}
+
+.footer-dropdown-btn {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    background: none;
+    border: none;
+    color: var(--white);
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.footer-dropdown-btn:hover {
+    background: rgba(242, 201, 76, 0.1);
+    color: var(--gold);
+}
+
+.footer-dropdown-btn .dropdown-icon {
+    transition: transform 0.3s ease;
+    font-size: 14px;
+}
+
+.footer-dropdown.active .footer-dropdown-btn .dropdown-icon {
+    transform: rotate(180deg);
+}
+
+.footer-dropdown-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease;
+    background: rgba(0, 0, 0, 0.3);
+}
+
+.footer-dropdown.active .footer-dropdown-content {
+    max-height: 500px;
+}
+
+.dropdown-section {
+    padding: 15px 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.dropdown-section h5 {
+    color: var(--gold);
+    font-size: 14px;
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+.footer-dropdown-content a {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 8px 0;
+    color: var(--text-muted);
+    text-decoration: none;
+    font-size: 13px;
+    transition: all 0.3s ease;
+}
+
+.footer-dropdown-content a:hover {
+    color: var(--gold);
+    padding-left: 5px;
+}
+
+.footer-dropdown-content a i {
+    width: 16px;
+    text-align: center;
+    color: var(--gold);
+    font-size: 13px;
+}
+
+/* Social & Newsletter */
+.footer-social-newsletter {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.social-links {
+    display: flex;
+    gap: 12px;
+    margin-top: 5px;
+}
+
+.social-link {
+    width: 35px;
+    height: 35px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--white);
+    text-decoration: none;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    font-size: 14px;
+}
+
+.social-link:hover {
+    background: var(--gold);
+    color: var(--black);
+    transform: translateY(-3px);
+    border-color: var(--gold);
+}
+
+.newsletter-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 5px;
+}
+
+.newsletter-form p {
+    font-size: 12px;
+    color: var(--text-muted);
+    margin-bottom: 3px;
+}
+
+.newsletter-input {
+    padding: 10px 15px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 8px;
+    color: var(--white);
+    font-size: 13px;
+    transition: all 0.3s ease;
+}
+
+.newsletter-input:focus {
+    outline: none;
+    border-color: var(--gold);
+    box-shadow: 0 0 0 2px rgba(242, 201, 76, 0.2);
+}
+
+.newsletter-btn {
+    padding: 10px 15px;
+    background: var(--gold);
+    color: var(--black);
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 13px;
+}
+
+.newsletter-btn:hover {
+    background: #f7d774;
+    transform: translateY(-2px);
+}
+
+/* Bottom Bar */
+.footer-bottom {
+    max-width: 1200px;
+    margin: 30px auto 0;
+    padding: 20px 20px 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    text-align: center;
+}
+
+.footer-copyright {
+    font-size: 12px;
+    color: var(--text-muted);
+}
+
+/* Back to Top Button */
+.back-to-top {
+    position: fixed;
+    right: 30px;
+    bottom: 30px;
+    width: 50px;
+    height: 50px;
+    background: var(--gold);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--black);
+    text-decoration: none;
+    font-size: 20px;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    z-index: 999;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(20px);
+}
+
+.back-to-top.visible {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.back-to-top:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+}
+
+/* RESPONSIVE FOOTER */
+@media (max-width: 1024px) {
+    .footer-container {
+        grid-template-columns: 1fr 1.5fr;
+        gap: 30px;
+    }
+    
+    .footer-desktop-links {
+        display: none;
+    }
+    
+    .footer-mobile-dropdown {
+        display: block;
+        grid-column: 1 / -1;
+    }
+    
+    .footer-social-newsletter {
+        grid-column: 1 / -1;
+        text-align: center;
+        align-items: center;
+    }
+    
+    .social-links {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 768px) {
+    .footer {
+        padding: 40px 0 15px;
+    }
+    
+    .footer-container {
+        grid-template-columns: 1fr;
+        gap: 25px;
+        text-align: center;
+    }
+    
+    .footer-desktop-links {
+        display: none;
+    }
+    
+    .footer-mobile-dropdown {
+        display: block;
+        margin-bottom: 20px;
+    }
+    
+    .footer-dropdown-btn {
+        padding: 12px 15px;
+        font-size: 15px;
+    }
+    
+    .newsletter-form {
+        width: 100%;
+        max-width: 350px;
+        margin: 0 auto;
+    }
+    
+    .back-to-top {
+        width: 45px;
+        height: 45px;
+        font-size: 18px;
+        right: 20px;
+        bottom: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .footer {
+        padding: 30px 0 10px;
+    }
+    
+    .footer-container {
+        padding: 0 15px;
+        gap: 20px;
+    }
+    
+    .footer-logo-text {
+        font-size: 22px;
+    }
+    
+    .footer-tagline {
+        font-size: 13px;
+    }
+    
+    .contact-item {
+        font-size: 12px;
+    }
+    
+    .footer-dropdown-btn {
+        font-size: 14px;
+        padding: 10px 15px;
+    }
+    
+    .footer-dropdown-content a {
+        font-size: 12px;
+    }
+    
+    .social-link {
+        width: 32px;
+        height: 32px;
+        font-size: 13px;
+    }
+    
+    .newsletter-input,
+    .newsletter-btn {
+        padding: 8px 12px;
+        font-size: 12px;
+    }
+}

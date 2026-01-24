@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phoenix Professionals - Navbar</title>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Navbar CSS -->
+    <link rel="stylesheet" href="../css/navbar.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: Arial, sans-serif;
+            background: #f5f5f5;
+            min-height: 150vh;
+            padding-top: 20px;
+        }
+        
+        .test-content {
+            max-width: 800px;
+            margin: 100px auto 50px;
+            padding: 0 20px;
+            text-align: center;
+        }
+        
+        h1 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+        
+        p {
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+        
+        .test-box {
+            background: white;
+            border-radius: 10px;
+            padding: 30px;
+            margin-top: 40px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            border-left: 4px solid #f2c94c;
+        }
+        
+        .instruction {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 20px 0;
+            border: 1px dashed #ddd;
+        }
+        
+        .instruction h3 {
+            color: #f2c94c;
+            margin-bottom: 10px;
+        }
+        
+        @media (max-width: 768px) {
+            .test-content {
+                margin-top: 80px;
+            }
+            
+            .test-box {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- NAVBAR START -->
+    <header class="navbar">
+        <div class="nav-container">
+            <!-- Logo -->
+            <div class="brand">
+                <span class="brand-gold">Phoenix</span>
+                <span class="brand-white">Professionals</span>
+            </div>
+
+            <!-- Desktop Navigation -->
+            <nav class="nav-links">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="services.html" class="nav-link">Services</a>
+                <a href="about.html" class="nav-link">About</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+                <a href="contact.html" class="nav-cta-btn">Get Quote</a>
+            </nav>
+
+            <!-- Mobile Menu Button (Three Lines/Hamburger) -->
+            <button class="mobile-menu-btn" aria-label="Toggle mobile menu" id="hamburgerBtn">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Navigation Overlay -->
+        <div class="mobile-nav-overlay"></div>
+
+        <!-- Mobile Navigation -->
+        <nav class="mobile-nav">
+            <div class="mobile-nav-header">
+                <div class="mobile-brand">
+                    <span class="brand-gold">Phoenix</span>
+                    <span class="brand-white">Professionals</span>
+                </div>
+                <!-- Cross/Close Button (X) -->
+                <button class="mobile-close-btn" aria-label="Close mobile menu" id="closeBtn">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            
+            <div class="mobile-nav-content">
+                <a href="index.html" class="mobile-nav-link">
+                    <i class="fas fa-home"></i>
+                    <span>Home</span>
+                </a>
+                <a href="services.html" class="mobile-nav-link">
+                    <i class="fas fa-briefcase"></i>
+                    <span>Services</span>
+                </a>
+                <a href="about.html" class="mobile-nav-link">
+                    <i class="fas fa-info-circle"></i>
+                    <span>About</span>
+                </a>
+                <a href="contact.html" class="mobile-nav-link">
+                    <i class="fas fa-envelope"></i>
+                    <span>Contact</span>
+                </a>
+                
+                <a href="contact.html" class="mobile-cta-btn">
+                    <i class="fas fa-file-invoice-dollar"></i>
+                    <span>Get Quote</span>
+                </a>
+            </div>
+            
+            <div class="mobile-nav-footer">
+                <div class="mobile-contact-info">
+                    <div class="mobile-contact-item">
+                        <i class="fas fa-phone"></i>
+                        <span>+91-8076 551 974</span>
+                    </div>
+                    <div class="mobile-contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <span>professionalsphoenix@gmail.com</span>
+                    </div>
+                    <div class="mobile-contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>India</span>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <!-- Navbar JS -->
+    <script src="../js/navbar.js"></script>
+</body>
+</html>

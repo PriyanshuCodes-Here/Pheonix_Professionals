@@ -1,0 +1,1147 @@
+/* style.css - Main Stylesheet (Navbar CSS Removed) */
+
+:root {
+    --black: #0d0d0d;
+    --black-soft: #141414;
+    --gold: #f2c94c;
+    --white: #ffffff;
+    --text-muted: #cccccc;
+    --bg: #f6f6f6;
+    --light-gold: #f7d774;
+    --dark-gold: #e6b91e;
+    --light-bg: #f8f9fa;
+    --border-color: #eaeaea;
+}
+
+/* RESET & BASE STYLES */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: var(--bg);
+    color: #1a1a1a;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    overflow-x: hidden;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.main-content {
+    flex: 1;
+    width: 100%;
+    margin-top: 80px; /* ✅ NAVBAR से SPACING के लिए IMPORTANT */
+}
+
+/* =========================
+   HERO SECTION - IMPROVED & RESPONSIVE
+   ========================= */
+.hero-section {
+    background: linear-gradient(135deg, var(--black), var(--black-soft));
+    color: var(--white);
+    padding: 60px 0 100px 0; /* ✅ TOP PADDING कम किया है */
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    margin-top: 0; /* ✅ Navbar से attach नहीं होगा */
+}
+
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"><path d="M0,0 L100,0 L100,100 Z" fill="rgba(242,201,76,0.08)"/></svg>');
+    background-size: cover;
+}
+
+.hero-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 50px;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+    width: 100%;
+}
+
+.hero-content {
+    max-width: 600px;
+    width: 100%;
+    padding-top: 20px; /* ✅ Extra padding for content */
+}
+
+.hero-title {
+    font-size: 48px;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 20px;
+    background: linear-gradient(135deg, var(--gold), var(--light-gold));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.hero-subtitle {
+    font-size: 18px;
+    color: var(--text-muted);
+    margin-bottom: 30px;
+    line-height: 1.6;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.primary-btn, .secondary-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 14px 30px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+    min-width: 180px;
+}
+
+.primary-btn {
+    background: linear-gradient(135deg, var(--gold), var(--light-gold));
+    color: var(--black);
+    box-shadow: 0 5px 20px rgba(242, 201, 76, 0.3);
+}
+
+.primary-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(242, 201, 76, 0.4);
+}
+
+.secondary-btn {
+    background: transparent;
+    color: var(--white);
+    border: 2px solid var(--gold);
+}
+
+.secondary-btn:hover {
+    background: rgba(242, 201, 76, 0.1);
+    transform: translateY(-3px);
+}
+
+.hero-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding-top: 20px; /* ✅ Image को भी थोड़ा नीचे */
+}
+
+.hero-image-placeholder {
+    width: 100%;
+    max-width: 400px;
+    height: 300px;
+    background: linear-gradient(135deg, rgba(242, 201, 76, 0.1), rgba(242, 201, 76, 0.05));
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px dashed var(--gold);
+}
+
+.hero-image-placeholder i {
+    font-size: 80px;
+    color: var(--gold);
+    opacity: 0.5;
+}
+
+/* =========================
+   SERVICES PREVIEW - WELL STRUCTURED GRID
+   ========================= */
+.services-preview {
+    padding: 80px 0;
+    background: var(--light-bg);
+    width: 100%;
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 50px;
+    width: 100%;
+}
+
+.section-title {
+    font-size: 36px;
+    font-weight: 700;
+    color: var(--black);
+    margin-bottom: 15px;
+    position: relative;
+    display: inline-block;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 3px;
+    background: var(--gold);
+    border-radius: 2px;
+}
+
+.section-subtitle {
+    font-size: 16px;
+    color: #666;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-bottom: 40px;
+    width: 100%;
+}
+
+.service-card {
+    background: var(--white);
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+    border: 1px solid var(--border-color);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+}
+
+.service-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+    border-color: var(--gold);
+}
+
+.service-icon {
+    width: 70px;
+    height: 70px;
+    background: rgba(242, 201, 76, 0.1);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+}
+
+.service-icon i {
+    font-size: 30px;
+    color: var(--gold);
+}
+
+.service-title {
+    font-size: 22px;
+    font-weight: 600;
+    color: var(--black);
+    margin-bottom: 15px;
+}
+
+.service-description {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 20px;
+    line-height: 1.6;
+    flex-grow: 1;
+}
+
+.service-link {
+    color: var(--gold);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 15px;
+    transition: all 0.3s ease;
+    display: inline-block;
+    margin-top: auto;
+}
+
+.service-link:hover {
+    color: var(--dark-gold);
+    transform: translateX(5px);
+}
+
+.view-all-services {
+    text-align: center;
+    width: 100%;
+}
+
+.view-all-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 12px 30px;
+    background: var(--black);
+    color: var(--white);
+    text-decoration: none;
+    border-radius: 30px;
+    font-weight: 600;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    border: 2px solid var(--black);
+    min-width: 200px;
+}
+
+.view-all-btn:hover {
+    background: transparent;
+    color: var(--black);
+    transform: translateY(-3px);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+}
+
+.view-all-btn i {
+    transition: transform 0.3s ease;
+}
+
+.view-all-btn:hover i {
+    transform: translateX(5px);
+}
+
+/* =========================
+   WHY CHOOSE US - BALANCED GRID
+   ========================= */
+.why-choose-us {
+    padding: 80px 0;
+    background: var(--white);
+    width: 100%;
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    width: 100%;
+}
+
+.feature-card {
+    background: var(--light-bg);
+    padding: 30px;
+    border-radius: 15px;
+    text-align: center;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+}
+
+.feature-card:hover {
+    border-color: var(--gold);
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.feature-icon {
+    width: 60px;
+    height: 60px;
+    background: rgba(242, 201, 76, 0.1);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+}
+
+.feature-icon i {
+    font-size: 24px;
+    color: var(--gold);
+}
+
+.feature-title {
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--black);
+    margin-bottom: 10px;
+}
+
+.feature-description {
+    font-size: 14px;
+    color: #666;
+    line-height: 1.6;
+}
+
+/* =========================
+   CTA SECTION - CENTERED & RESPONSIVE
+   ========================= */
+.cta-section {
+    padding: 80px 0;
+    background: linear-gradient(135deg, var(--black), var(--black-soft));
+    color: var(--white);
+    text-align: center;
+    width: 100%;
+}
+
+.cta-content {
+    max-width: 600px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.cta-title {
+    font-size: 36px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: var(--white);
+}
+
+.cta-description {
+    font-size: 18px;
+    color: var(--text-muted);
+    margin-bottom: 30px;
+}
+
+.cta-buttons {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.cta-primary-btn, .cta-secondary-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 14px 30px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    min-width: 180px;
+}
+
+.cta-primary-btn {
+    background: linear-gradient(135deg, var(--gold), var(--light-gold));
+    color: var(--black);
+    box-shadow: 0 5px 20px rgba(242, 201, 76, 0.3);
+}
+
+.cta-primary-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(242, 201, 76, 0.4);
+}
+
+.cta-secondary-btn {
+    background: transparent;
+    color: var(--white);
+    border: 2px solid var(--gold);
+}
+
+.cta-secondary-btn:hover {
+    background: rgba(242, 201, 76, 0.1);
+    transform: translateY(-3px);
+}
+
+/* =========================
+   ANIMATIONS
+   ========================= */
+.fade-in {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.fade-in.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* =========================
+   RESPONSIVE BREAKPOINTS - WELL STRUCTURED
+   ========================= */
+
+/* Large Desktop (1440px and above) */
+@media (min-width: 1440px) {
+    .container,
+    .hero-container {
+        max-width: 1400px;
+    }
+    
+    .hero-title {
+        font-size: 52px;
+    }
+    
+    .services-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    
+    .features-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+/* Desktop (1025px to 1439px) */
+@media (min-width: 1025px) and (max-width: 1439px) {
+    .main-content {
+        margin-top: 80px; /* ✅ Navbar height maintain */
+    }
+    
+    .services-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    
+    .features-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+/* Tablet Landscape (769px to 1024px) */
+@media (max-width: 1024px) and (min-width: 769px) {
+    .main-content {
+        margin-top: 80px; /* ✅ Navbar height maintain */
+    }
+    
+    .hero-container {
+        grid-template-columns: 1fr;
+        gap: 40px;
+        text-align: center;
+    }
+    
+    .hero-content {
+        max-width: 700px;
+        margin: 0 auto;
+        padding-top: 10px;
+    }
+    
+    .hero-title {
+        font-size: 40px;
+    }
+    
+    .hero-subtitle {
+        font-size: 17px;
+    }
+    
+    .hero-buttons {
+        justify-content: center;
+        gap: 20px;
+    }
+    
+    .hero-image {
+        padding-top: 10px;
+    }
+    
+    .hero-image-placeholder {
+        max-width: 350px;
+        height: 280px;
+        margin: 0 auto;
+    }
+    
+    .hero-image-placeholder i {
+        font-size: 70px;
+    }
+    
+    .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 25px;
+    }
+    
+    .service-card {
+        padding: 25px;
+    }
+    
+    .features-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 25px;
+    }
+}
+
+/* Tablet Portrait (577px to 768px) */
+@media (max-width: 768px) and (min-width: 577px) {
+    .main-content {
+        margin-top: 70px; /* ✅ मोबाइल Navbar के लिए adjust */
+    }
+    
+    /* Adjust hero section */
+    .hero-section {
+        padding: 40px 0 60px 0; /* ✅ Top padding कम किया */
+    }
+    
+    .hero-container {
+        grid-template-columns: 1fr;
+        gap: 35px;
+        text-align: center;
+        padding: 0 15px;
+    }
+    
+    .hero-content {
+        max-width: 100%;
+        padding: 10px 10px 0 10px;
+    }
+    
+    .hero-title {
+        font-size: 32px;
+        line-height: 1.3;
+        margin-bottom: 15px;
+    }
+    
+    .hero-subtitle {
+        font-size: 16px;
+        margin-bottom: 25px;
+        padding: 0 10px;
+    }
+    
+    /* बटनों को ऊपर-नीचे करें */
+    .hero-buttons {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+        width: 100%;
+        max-width: 400px;
+        margin: 0 auto;
+    }
+    
+    .primary-btn, .secondary-btn {
+        width: 100%;
+        max-width: 300px;
+        justify-content: center;
+        padding: 14px 25px;
+        font-size: 15px;
+        margin: 0 auto;
+    }
+    
+    /* इमेज को छोटा करें */
+    .hero-image {
+        margin-top: 10px;
+        padding-top: 0;
+    }
+    
+    .hero-image-placeholder {
+        max-width: 280px;
+        height: 220px;
+        margin: 0 auto;
+    }
+    
+    .hero-image-placeholder i {
+        font-size: 60px;
+    }
+    
+    /* Services section */
+    .services-preview {
+        padding: 50px 0;
+    }
+    
+    .section-title {
+        font-size: 28px;
+    }
+    
+    .section-subtitle {
+        font-size: 15px;
+        padding: 0 15px;
+    }
+    
+    .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+        padding: 0 10px;
+    }
+    
+    .service-card {
+        padding: 25px 20px;
+        height: auto;
+        min-height: 280px;
+    }
+    
+    .service-icon {
+        width: 60px;
+        height: 60px;
+        margin-bottom: 15px;
+    }
+    
+    .service-title {
+        font-size: 20px;
+        margin-bottom: 12px;
+    }
+    
+    .service-description {
+        font-size: 14px;
+    }
+    
+    /* Why Choose Us */
+    .why-choose-us {
+        padding: 50px 0;
+    }
+    
+    .features-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+        padding: 0 10px;
+    }
+    
+    .feature-card {
+        padding: 25px 20px;
+    }
+    
+    .feature-title {
+        font-size: 19px;
+    }
+    
+    .feature-description {
+        font-size: 14px;
+    }
+    
+    /* CTA section */
+    .cta-section {
+        padding: 50px 0;
+    }
+    
+    .cta-title {
+        font-size: 28px;
+        padding: 0 15px;
+    }
+    
+    .cta-description {
+        font-size: 16px;
+        padding: 0 15px;
+        margin-bottom: 25px;
+    }
+    
+    /* CTA बटनों को भी ऊपर-नीचे करें */
+    .cta-buttons {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+        width: 100%;
+        max-width: 400px;
+        margin: 0 auto;
+    }
+    
+    .cta-primary-btn, .cta-secondary-btn {
+        width: 100%;
+        max-width: 300px;
+        justify-content: center;
+        padding: 14px 25px;
+        font-size: 15px;
+        margin: 0 auto;
+    }
+}
+
+/* Mobile (425px to 576px) */
+@media (max-width: 576px) and (min-width: 426px) {
+    .main-content {
+        margin-top: 70px; /* ✅ मोबाइल Navbar के लिए adjust */
+    }
+    
+    .hero-section {
+        padding: 30px 0 50px 0; /* ✅ Top padding कम किया */
+    }
+    
+    .hero-container {
+        padding: 0 15px;
+        gap: 30px;
+    }
+    
+    .hero-title {
+        font-size: 28px;
+        padding: 0 5px;
+    }
+    
+    .hero-subtitle {
+        font-size: 15px;
+        padding: 0 10px;
+        margin-bottom: 20px;
+    }
+    
+    .hero-buttons {
+        flex-direction: column;
+        align-items: center;
+        gap: 12px;
+        width: 100%;
+        max-width: 350px;
+        margin: 0 auto;
+    }
+    
+    .primary-btn, .secondary-btn {
+        width: 100%;
+        max-width: 280px;
+        padding: 13px 20px;
+        font-size: 14px;
+    }
+    
+    .hero-image {
+        margin-top: 10px;
+    }
+    
+    .hero-image-placeholder {
+        max-width: 250px;
+        height: 200px;
+    }
+    
+    .hero-image-placeholder i {
+        font-size: 50px;
+    }
+    
+    .services-preview {
+        padding: 40px 0;
+    }
+    
+    .section-title {
+        font-size: 26px;
+    }
+    
+    .section-subtitle {
+        font-size: 14px;
+        padding: 0 15px;
+    }
+    
+    .services-grid {
+        grid-template-columns: 1fr;
+        gap: 18px;
+        padding: 0 15px;
+    }
+    
+    .service-card {
+        padding: 22px 18px;
+        min-height: 260px;
+    }
+    
+    .service-icon {
+        width: 55px;
+        height: 55px;
+        margin-bottom: 12px;
+    }
+    
+    .service-title {
+        font-size: 19px;
+        margin-bottom: 10px;
+    }
+    
+    .service-description {
+        font-size: 13px;
+    }
+    
+    .why-choose-us {
+        padding: 40px 0;
+    }
+    
+    .features-grid {
+        grid-template-columns: 1fr;
+        gap: 18px;
+        padding: 0 15px;
+    }
+    
+    .feature-card {
+        padding: 22px 18px;
+    }
+    
+    .feature-title {
+        font-size: 19px;
+    }
+    
+    .feature-description {
+        font-size: 13px;
+    }
+    
+    .cta-section {
+        padding: 40px 0;
+    }
+    
+    .cta-title {
+        font-size: 26px;
+        padding: 0 15px;
+    }
+    
+    .cta-description {
+        font-size: 15px;
+        padding: 0 15px;
+        margin-bottom: 20px;
+    }
+    
+    .cta-buttons {
+        flex-direction: column;
+        align-items: center;
+        gap: 12px;
+        width: 100%;
+        max-width: 350px;
+        margin: 0 auto;
+    }
+    
+    .cta-primary-btn, .cta-secondary-btn {
+        width: 100%;
+        max-width: 280px;
+        padding: 13px 20px;
+        font-size: 14px;
+    }
+}
+
+/* Small Mobile (320px to 424px) */
+@media (max-width: 425px) {
+    .main-content {
+        margin-top: 70px; /* ✅ छोटे मोबाइल के लिए adjust */
+    }
+    
+    .hero-section {
+        padding: 25px 0 40px 0; /* ✅ Top padding कम किया */
+    }
+    
+    .hero-container {
+        padding: 0 10px;
+        gap: 25px;
+    }
+    
+    .hero-title {
+        font-size: 24px;
+        padding: 0;
+    }
+    
+    .hero-subtitle {
+        font-size: 14px;
+        padding: 0;
+        margin-bottom: 20px;
+    }
+    
+    .hero-buttons {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+        width: 100%;
+        max-width: 320px;
+        margin: 0 auto;
+    }
+    
+    .primary-btn, .secondary-btn {
+        width: 100%;
+        max-width: 260px;
+        padding: 12px 18px;
+        font-size: 14px;
+        min-width: unset;
+    }
+    
+    .hero-image {
+        margin-top: 10px;
+    }
+    
+    .hero-image-placeholder {
+        max-width: 220px;
+        height: 180px;
+    }
+    
+    .hero-image-placeholder i {
+        font-size: 45px;
+    }
+    
+    .section-title {
+        font-size: 22px;
+    }
+    
+    .section-subtitle {
+        font-size: 14px;
+        padding: 0 10px;
+    }
+    
+    .services-preview {
+        padding: 40px 0;
+    }
+    
+    .services-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+        padding: 0 10px;
+    }
+    
+    .service-card {
+        padding: 20px 15px;
+        min-height: 240px;
+    }
+    
+    .service-icon {
+        width: 55px;
+        height: 55px;
+        margin-bottom: 12px;
+    }
+    
+    .service-title {
+        font-size: 18px;
+        margin-bottom: 10px;
+    }
+    
+    .service-description {
+        font-size: 13px;
+    }
+    
+    .why-choose-us {
+        padding: 40px 0;
+    }
+    
+    .features-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+        padding: 0 10px;
+    }
+    
+    .feature-card {
+        padding: 20px 15px;
+    }
+    
+    .feature-title {
+        font-size: 18px;
+    }
+    
+    .feature-description {
+        font-size: 13px;
+    }
+    
+    .cta-section {
+        padding: 40px 0;
+    }
+    
+    .cta-title {
+        font-size: 22px;
+        padding: 0 10px;
+    }
+    
+    .cta-description {
+        font-size: 14px;
+        padding: 0 10px;
+        margin-bottom: 20px;
+    }
+    
+    .cta-buttons {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+        width: 100%;
+        max-width: 320px;
+        margin: 0 auto;
+    }
+    
+    .cta-primary-btn, .cta-secondary-btn {
+        width: 100%;
+        max-width: 260px;
+        padding: 12px 18px;
+        font-size: 14px;
+        min-width: unset;
+    }
+    
+    .view-all-btn {
+        min-width: 180px;
+        padding: 12px 25px;
+        font-size: 15px;
+    }
+}
+
+/* Extra Small Mobile (below 320px) */
+@media (max-width: 319px) {
+    .main-content {
+        margin-top: 65px; /* ✅ बहुत छोटे स्क्रीन के लिए adjust */
+    }
+    
+    .hero-section {
+        padding: 20px 0 35px 0;
+    }
+    
+    .hero-title {
+        font-size: 22px;
+    }
+    
+    .hero-subtitle {
+        font-size: 13px;
+    }
+    
+    .hero-buttons {
+        max-width: 280px;
+    }
+    
+    .primary-btn, .secondary-btn {
+        max-width: 240px;
+        padding: 10px 15px;
+        font-size: 13px;
+    }
+    
+    .hero-image-placeholder {
+        max-width: 200px;
+        height: 160px;
+    }
+    
+    .hero-image-placeholder i {
+        font-size: 40px;
+    }
+    
+    .section-title {
+        font-size: 20px;
+    }
+    
+    .section-subtitle {
+        font-size: 13px;
+        padding: 0 5px;
+    }
+    
+    .services-grid {
+        gap: 12px;
+        padding: 0 8px;
+    }
+    
+    .service-card {
+        padding: 18px 12px;
+        min-height: 220px;
+    }
+    
+    .service-icon {
+        width: 50px;
+        height: 50px;
+    }
+    
+    .service-title {
+        font-size: 17px;
+    }
+    
+    .cta-title {
+        font-size: 20px;
+    }
+    
+    .cta-description {
+        font-size: 13px;
+    }
+    
+    .cta-buttons {
+        max-width: 280px;
+    }
+    
+    .cta-primary-btn, .cta-secondary-btn {
+        max-width: 240px;
+        padding: 10px 15px;
+        font-size: 13px;
+    }
+    
+    .view-all-btn {
+        min-width: 160px;
+        padding: 10px 20px;
+        font-size: 14px;
+    }
+}

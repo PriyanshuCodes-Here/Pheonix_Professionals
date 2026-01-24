@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Phoenix Professionals | Services</title>
+    <link rel="icon" type="image/png" href="assets/logo.png">
+    
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Navbar CSS -->
+    <link rel="stylesheet" href="css/navbar.css">
+    
+    <!-- Footer CSS -->
+    <link rel="stylesheet" href="css/footer.css">
+    
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    
+    <!-- Services Page Specific CSS -->
+    <link rel="stylesheet" href="css/services.css">
+</head>
+
+<body>
+    <!-- NAVBAR (Directly included) -->
+    <header class="navbar">
+        <div class="nav-container">
+            <!-- Logo -->
+            <div class="brand">
+                <span class="brand-gold">Phoenix</span>
+                <span class="brand-white">Professionals</span>
+            </div>
+
+            <!-- Desktop Navigation -->
+            <nav class="nav-links">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="services.html" class="nav-link active">Services</a>
+                <a href="about.html" class="nav-link">About</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+                <a href="contact.html" class="nav-cta-btn">Get Quote</a>
+            </nav>
+
+            <!-- Mobile Menu Button (Three Lines/Hamburger) -->
+            <button class="mobile-menu-btn" aria-label="Toggle mobile menu" id="hamburgerBtn">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Navigation Overlay -->
+        <div class="mobile-nav-overlay"></div>
+
+        <!-- Mobile Navigation -->
+        <nav class="mobile-nav">
+            <div class="mobile-nav-header">
+                <div class="mobile-brand">
+                    <span class="brand-gold">Phoenix</span>
+                    <span class="brand-white">Professionals</span>
+                </div>
+                <!-- Cross/Close Button (X) -->
+                <button class="mobile-close-btn" aria-label="Close mobile menu" id="closeBtn">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            
+            <div class="mobile-nav-content">
+                <a href="index.html" class="mobile-nav-link">
+                    <i class="fas fa-home"></i>
+                    <span>Home</span>
+                </a>
+                <a href="services.html" class="mobile-nav-link active">
+                    <i class="fas fa-briefcase"></i>
+                    <span>Services</span>
+                </a>
+                <a href="about.html" class="mobile-nav-link">
+                    <i class="fas fa-info-circle"></i>
+                    <span>About</span>
+                </a>
+                <a href="contact.html" class="mobile-nav-link">
+                    <i class="fas fa-envelope"></i>
+                    <span>Contact</span>
+                </a>
+                
+                <a href="contact.html" class="mobile-cta-btn">
+                    <i class="fas fa-file-invoice-dollar"></i>
+                    <span>Get Quote</span>
+                </a>
+            </div>
+            
+            <div class="mobile-nav-footer">
+                <div class="mobile-contact-info">
+                    <div class="mobile-contact-item">
+                        <i class="fas fa-phone"></i>
+                        <span>+91-8076 551 974</span>
+                    </div>
+                    <div class="mobile-contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <span>professionalsphoenix@gmail.com</span>
+                    </div>
+                    <div class="mobile-contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>India</span>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- MAIN CONTENT -->
+    <main class="main-content">
+        <!-- PAGE HEADER -->
+        <section class="services-header">
+            <div class="container">
+                <div class="services-header-content">
+                    <h1 class="services-title">Our Professional Services</h1>
+                    <p class="services-subtitle">Comprehensive financial solutions tailored for your business growth and compliance needs</p>
+                    <div class="services-header-cta">
+                        <a href="contact.html" class="services-cta-btn">
+                            <i class="fas fa-envelope"></i>
+                            Get Free Consultation
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SERVICES GRID -->
+        <section class="services-main-section">
+            <div class="container">
+                <div class="services-grid">
+                    <!-- Service Card 1 -->
+                    <div class="service-card" data-service="accounting">
+                        <div class="service-card-header">
+                            <div class="service-icon">
+                                <i class="fas fa-calculator"></i>
+                            </div>
+                            <h3 class="service-card-title">Accounting & Bookkeeping</h3>
+                        </div>
+                        <ul class="service-features">
+                            <li><i class="fas fa-check-circle"></i> Day-to-day bookkeeping</li>
+                            <li><i class="fas fa-check-circle"></i> Books of accounts maintenance</li>
+                            <li><i class="fas fa-check-circle"></i> Ledger, journal & trial balance</li>
+                            <li><i class="fas fa-check-circle"></i> Accounts reconciliation</li>
+                            <li><i class="fas fa-check-circle"></i> MIS reports preparation</li>
+                            <li><i class="fas fa-check-circle"></i> Tally, Zoho, QuickBooks support</li>
+                        </ul>
+                        <div class="service-card-footer">
+                            <a href="contact.html" class="service-enquiry-btn">
+                                <i class="fas fa-envelope"></i>
+                                Enquire Now
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Service Card 2 -->
+                    <div class="service-card" data-service="tax">
+                        <div class="service-card-header">
+                            <div class="service-icon">
+                                <i class="fas fa-sack-dollar"></i>
+                            </div>
+                            <h3 class="service-card-title">Income Tax Services</h3>
+                        </div>
+                        <ul class="service-features">
+                            <li><i class="fas fa-check-circle"></i> ITR filing for individuals & businesses</li>
+                            <li><i class="fas fa-check-circle"></i> TDS returns & compliance</li>
+                            <li><i class="fas fa-check-circle"></i> Advance tax computation</li>
+                            <li><i class="fas fa-check-circle"></i> Tax planning & optimization</li>
+                            <li><i class="fas fa-check-circle"></i> Income tax notices handling</li>
+                        </ul>
+                        <div class="service-card-footer">
+                            <a href="contact.html" class="service-enquiry-btn">
+                                <i class="fas fa-envelope"></i>
+                                Enquire Now
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Service Card 3 -->
+                    <div class="service-card" data-service="gst">
+                        <div class="service-card-header">
+                            <div class="service-icon">
+                                <i class="fas fa-file-invoice-dollar"></i>
+                            </div>
+                            <h3 class="service-card-title">GST Services</h3>
+                        </div>
+                        <ul class="service-features">
+                            <li><i class="fas fa-check-circle"></i> GST registration & migration</li>
+                            <li><i class="fas fa-check-circle"></i> GSTR-1, 3B monthly filing</li>
+                            <li><i class="fas fa-check-circle"></i> GST reconciliation & returns</li>
+                            <li><i class="fas fa-check-circle"></i> Amendment / cancellation services</li>
+                            <li><i class="fas fa-check-circle"></i> LUT filing for exporters</li>
+                        </ul>
+                        <div class="service-card-footer">
+                            <a href="contact.html" class="service-enquiry-btn">
+                                <i class="fas fa-envelope"></i>
+                                Enquire Now
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Service Card 4 -->
+                    <div class="service-card" data-service="registration">
+                        <div class="service-card-header">
+                            <div class="service-icon">
+                                <i class="fas fa-building"></i>
+                            </div>
+                            <h3 class="service-card-title">Business Registration</h3>
+                        </div>
+                        <ul class="service-features">
+                            <li><i class="fas fa-check-circle"></i> Proprietorship registration</li>
+                            <li><i class="fas fa-check-circle"></i> Partnership firm formation</li>
+                            <li><i class="fas fa-check-circle"></i> LLP incorporation</li>
+                            <li><i class="fas fa-check-circle"></i> Private Limited Company</li>
+                            <li><i class="fas fa-check-circle"></i> MSME / Udyam registration</li>
+                            <li><i class="fas fa-check-circle"></i> PAN / TAN applications</li>
+                        </ul>
+                        <div class="service-card-footer">
+                            <a href="contact.html" class="service-enquiry-btn">
+                                <i class="fas fa-envelope"></i>
+                                Enquire Now
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Service Card 5 -->
+                    <div class="service-card" data-service="consulting">
+                        <div class="service-card-header">
+                            <div class="service-icon">
+                                <i class="fas fa-chart-line"></i>
+                            </div>
+                            <h3 class="service-card-title">Financial Consulting</h3>
+                        </div>
+                        <ul class="service-features">
+                            <li><i class="fas fa-check-circle"></i> Financial analysis & planning</li>
+                            <li><i class="fas fa-check-circle"></i> Budgeting & forecasting</li>
+                            <li><i class="fas fa-check-circle"></i> Cost control strategies</li>
+                            <li><i class="fas fa-check-circle"></i> Cash flow management</li>
+                            <li><i class="fas fa-check-circle"></i> Startup planning & funding</li>
+                        </ul>
+                        <div class="service-card-footer">
+                            <a href="contact.html" class="service-enquiry-btn">
+                                <i class="fas fa-envelope"></i>
+                                Enquire Now
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Service Card 6 -->
+                    <div class="service-card" data-service="payroll">
+                        <div class="service-card-header">
+                            <div class="service-icon">
+                                <i class="fas fa-users-gear"></i>
+                            </div>
+                            <h3 class="service-card-title">Payroll & Compliance</h3>
+                        </div>
+                        <ul class="service-features">
+                            <li><i class="fas fa-check-circle"></i> Payroll processing</li>
+                            <li><i class="fas fa-check-circle"></i> Salary structuring</li>
+                            <li><i class="fas fa-check-circle"></i> PF / ESIC registration & filing</li>
+                            <li><i class="fas fa-check-circle"></i> Bonus & gratuity calculation</li>
+                            <li><i class="fas fa-check-circle"></i> ROC & LLP annual filings</li>
+                        </ul>
+                        <div class="service-card-footer">
+                            <a href="contact.html" class="service-enquiry-btn">
+                                <i class="fas fa-envelope"></i>
+                                Enquire Now
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA SECTION -->
+        <section class="services-cta">
+            <div class="container">
+                <div class="services-cta-content">
+                    <h2 class="cta-title">Need Customized Financial Solutions?</h2>
+                    <p class="cta-description">Get personalized accounting, tax, and compliance services tailored to your specific business needs.</p>
+                    <div class="cta-buttons">
+                        <a href="contact.html" class="cta-secondary-btn">
+                            <i class="fas fa-envelope"></i>
+                            send Message
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER (Directly included) -->
+    <footer class="footer">
+        <a href="#" class="back-to-top">
+            <i class="fas fa-arrow-up"></i>
+        </a>
+        
+        <div class="footer-container">
+            <!-- Company Info -->
+            <div class="footer-company">
+                <div class="footer-logo">
+                    <span class="footer-logo-text">
+                        <span class="gold">Phoenix</span>
+                        <span class="white">Professionals</span>
+                    </span>
+                </div>
+                <p class="footer-tagline">
+                    Your trusted partner for accounting, taxation, and compliance solutions.
+                </p>
+                <div class="footer-contact">
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <span>professionalsphoenix@gmail.com</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <span>+91-8076 551 974</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>India</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Desktop Links -->
+            <div class="footer-desktop-links">
+                <div class="footer-links-section">
+                    <h4 class="footer-section-title">Quick Links</h4>
+                    <ul class="footer-links-list">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-links-section">
+                    <h4 class="footer-section-title">Our Services</h4>
+                    <ul class="footer-links-list">
+                        <li><a href="services.html">Accounting & Bookkeeping</a></li>
+                        <li><a href="services.html">Income Tax Services</a></li>
+                        <li><a href="services.html">GST Filing</a></li>
+                        <li><a href="services.html">Business Registration</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Mobile/Tablet Dropdown Links -->
+            <div class="footer-mobile-dropdown">
+                <div class="footer-dropdown">
+                    <button class="footer-dropdown-btn">
+                        <span>Quick Links & Services</span>
+                        <i class="fas fa-chevron-down dropdown-icon"></i>
+                    </button>
+                    <div class="footer-dropdown-content">
+                        <div class="dropdown-section">
+                            <h5>Quick Links</h5>
+                            <a href="index.html"><i class="fas fa-home"></i> Home</a>
+                            <a href="services.html"><i class="fas fa-briefcase"></i> Services</a>
+                            <a href="about.html"><i class="fas fa-info-circle"></i> About Us</a>
+                            <a href="contact.html"><i class="fas fa-envelope"></i> Contact</a>
+                        </div>
+                        <div class="dropdown-section">
+                            <h5>Our Services</h5>
+                            <a href="services.html"><i class="fas fa-chart-line"></i> Accounting</a>
+                            <a href="services.html"><i class="fas fa-file-invoice-dollar"></i> Income Tax</a>
+                            <a href="services.html"><i class="fas fa-receipt"></i> GST Services</a>
+                            <a href="services.html"><i class="fas fa-building"></i> Business Registration</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Social & Newsletter -->
+            <div class="footer-social-newsletter">
+                <div>
+                    <h4 class="footer-section-title">Follow Us</h4>
+                    <div class="social-links">
+                        <a href="#" class="social-link" aria-label="Facebook">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="social-link" aria-label="LinkedIn">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="#" class="social-link" aria-label="Twitter">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="footer-section-title">Newsletter</h4>
+                    <p>Subscribe for financial tips</p>
+                    <form class="newsletter-form" id="newsletterForm">
+                        <input type="email" class="newsletter-input" placeholder="Your email" required>
+                        <button type="submit" class="newsletter-btn">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <!-- Bottom Bar -->
+        <div class="footer-bottom">
+            <div class="footer-copyright">
+                © 2024 Phoenix Professionals. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript Files -->
+    <script src="js/navbar.js"></script>
+    <script src="js/footer.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/services.js"></script>
+</body>
+
+</html>

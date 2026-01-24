@@ -1,0 +1,696 @@
+/* services.css - Services Page Specific Styles */
+
+:root {
+    --black: #0d0d0d;
+    --black-soft: #141414;
+    --gold: #f2c94c;
+    --white: #ffffff;
+    --text-muted: #cccccc;
+    --bg: #f6f6f6;
+    --light-gold: #f7d774;
+    --dark-gold: #e6b91e;
+    --light-bg: #f8f9fa;
+    --border-color: #eaeaea;
+    --success: #10b981;
+}
+
+/* Services Header Section */
+.services-header {
+    background: linear-gradient(135deg, var(--black), var(--black-soft));
+    color: var(--white);
+    padding: 80px 0 60px;
+    position: relative;
+    overflow: hidden;
+    margin-top: 80px;
+}
+
+.services-header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"><path d="M0,0 L100,0 L100,100 Z" fill="rgba(242,201,76,0.08)"/></svg>');
+    background-size: cover;
+}
+
+.services-header-content {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+}
+
+.services-title {
+    font-size: 48px;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 20px;
+    background: linear-gradient(135deg, var(--gold), var(--light-gold));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.services-subtitle {
+    font-size: 18px;
+    color: var(--text-muted);
+    margin-bottom: 30px;
+    line-height: 1.6;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.services-header-cta {
+    margin-top: 30px;
+}
+
+.services-cta-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 16px 35px;
+    background: linear-gradient(135deg, var(--gold), var(--light-gold));
+    color: var(--black);
+    text-decoration: none;
+    border-radius: 30px;
+    font-weight: 600;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 20px rgba(242, 201, 76, 0.3);
+    border: none;
+    cursor: pointer;
+}
+
+.services-cta-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(242, 201, 76, 0.4);
+}
+
+/* Services Main Section */
+.services-main-section {
+    padding: 80px 0;
+    background: var(--light-bg);
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 30px;
+    width: 100%;
+}
+
+/* Service Card Styling */
+.service-card {
+    background: var(--white);
+    border-radius: 20px;
+    padding: 35px 30px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    border: 2px solid transparent;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+.service-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(135deg, var(--gold), var(--light-gold));
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.4s ease;
+}
+
+.service-card:hover {
+    transform: translateY(-12px);
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+    border-color: rgba(242, 201, 76, 0.2);
+}
+
+.service-card:hover::before {
+    transform: scaleX(1);
+}
+
+.service-card-header {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 25px;
+    padding-bottom: 20px;
+    border-bottom: 2px solid var(--light-bg);
+}
+
+.service-icon {
+    width: 70px;
+    height: 70px;
+    background: linear-gradient(135deg, rgba(242, 201, 76, 0.15), rgba(242, 201, 76, 0.05));
+    border-radius: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.service-icon i {
+    font-size: 32px;
+    color: var(--gold);
+}
+
+.service-card-title {
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--black);
+    line-height: 1.3;
+    margin: 0;
+}
+
+/* Service Features List */
+.service-features {
+    list-style: none;
+    margin: 0 0 30px 0;
+    padding: 0;
+    flex-grow: 1;
+}
+
+.service-features li {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    margin-bottom: 16px;
+    color: #4a5568;
+    font-size: 15px;
+    line-height: 1.5;
+    position: relative;
+    padding-left: 5px;
+}
+
+.service-features li i {
+    color: var(--success);
+    font-size: 16px;
+    margin-top: 2px;
+    flex-shrink: 0;
+}
+
+/* Service Card Footer */
+.service-card-footer {
+    margin-top: auto;
+    padding-top: 20px;
+    border-top: 2px solid var(--light-bg);
+}
+
+.service-enquiry-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: 100%;
+    padding: 14px 25px;
+    background: var(--black);
+    color: var(--white);
+    text-decoration: none;
+    border-radius: 12px;
+    font-weight: 600;
+    font-size: 15px;
+    transition: all 0.3s ease;
+    border: 2px solid var(--black);
+}
+
+.service-enquiry-btn:hover {
+    background: transparent;
+    color: var(--black);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Services CTA Section */
+.services-cta {
+    padding: 80px 0;
+    background: linear-gradient(135deg, var(--black), var(--black-soft));
+    color: var(--white);
+    text-align: center;
+}
+
+.services-cta-content {
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.cta-title {
+    font-size: 36px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: var(--white);
+}
+
+.cta-description {
+    font-size: 18px;
+    color: var(--text-muted);
+    margin-bottom: 35px;
+    line-height: 1.6;
+}
+
+.cta-buttons {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.cta-primary-btn, .cta-secondary-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 16px 35px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    min-width: 200px;
+}
+
+.cta-primary-btn {
+    background: linear-gradient(135deg, var(--gold), var(--light-gold));
+    color: var(--black);
+    box-shadow: 0 5px 20px rgba(242, 201, 76, 0.3);
+}
+
+.cta-primary-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(242, 201, 76, 0.4);
+}
+
+.cta-secondary-btn {
+    background: transparent;
+    color: var(--white);
+    border: 2px solid var(--gold);
+}
+
+.cta-secondary-btn:hover {
+    background: rgba(242, 201, 76, 0.1);
+    transform: translateY(-3px);
+}
+
+/* Active State for Nav Link */
+.nav-link.active {
+    color: var(--gold) !important;
+    position: relative;
+}
+
+.nav-link.active::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: var(--gold);
+    border-radius: 2px;
+}
+
+.mobile-nav-link.active {
+    color: var(--gold) !important;
+    background: rgba(242, 201, 76, 0.1);
+}
+
+/* =========================
+   RESPONSIVE BREAKPOINTS
+   ========================= */
+
+/* Large Desktop (1440px and above) */
+@media (min-width: 1440px) {
+    .services-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    
+    .services-title {
+        font-size: 52px;
+    }
+}
+
+/* Desktop (1025px to 1439px) */
+@media (min-width: 1025px) and (max-width: 1439px) {
+    .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Tablet Landscape (769px to 1024px) */
+@media (max-width: 1024px) and (min-width: 769px) {
+    .services-header {
+        padding: 70px 0 50px;
+        margin-top: 70px;
+    }
+    
+    .services-title {
+        font-size: 42px;
+    }
+    
+    .services-subtitle {
+        font-size: 17px;
+        padding: 0 20px;
+    }
+    
+    .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 25px;
+    }
+    
+    .service-card {
+        padding: 30px 25px;
+    }
+    
+    .service-card-title {
+        font-size: 22px;
+    }
+    
+    .cta-title {
+        font-size: 32px;
+    }
+    
+    .cta-buttons {
+        gap: 15px;
+    }
+    
+    .cta-primary-btn, .cta-secondary-btn {
+        min-width: 180px;
+        padding: 14px 30px;
+    }
+}
+
+/* Tablet Portrait (577px to 768px) */
+@media (max-width: 768px) and (min-width: 577px) {
+    .services-header {
+        padding: 60px 0 40px;
+        margin-top: 70px;
+    }
+    
+    .services-title {
+        font-size: 36px;
+        padding: 0 15px;
+    }
+    
+    .services-subtitle {
+        font-size: 16px;
+        padding: 0 20px;
+    }
+    
+    .services-cta-btn {
+        padding: 14px 30px;
+        font-size: 15px;
+    }
+    
+    .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+    
+    .service-card {
+        padding: 25px 20px;
+    }
+    
+    .service-card-header {
+        flex-direction: column;
+        text-align: center;
+        gap: 15px;
+    }
+    
+    .service-icon {
+        width: 60px;
+        height: 60px;
+        border-radius: 15px;
+    }
+    
+    .service-icon i {
+        font-size: 28px;
+    }
+    
+    .service-card-title {
+        font-size: 20px;
+    }
+    
+    .service-features li {
+        font-size: 14px;
+        margin-bottom: 14px;
+    }
+    
+    .services-cta {
+        padding: 60px 0;
+    }
+    
+    .cta-title {
+        font-size: 28px;
+        padding: 0 15px;
+    }
+    
+    .cta-description {
+        font-size: 16px;
+        padding: 0 15px;
+    }
+    
+    .cta-buttons {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+        padding: 0 20px;
+    }
+    
+    .cta-primary-btn, .cta-secondary-btn {
+        width: 100%;
+        max-width: 300px;
+        padding: 14px 25px;
+        font-size: 15px;
+        min-width: unset;
+    }
+}
+
+/* Mobile (425px to 576px) */
+@media (max-width: 576px) and (min-width: 426px) {
+    .services-header {
+        padding: 50px 0 35px;
+        margin-top: 70px;
+    }
+    
+    .services-title {
+        font-size: 32px;
+        padding: 0 10px;
+    }
+    
+    .services-subtitle {
+        font-size: 15px;
+        padding: 0 15px;
+    }
+    
+    .services-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        padding: 0 15px;
+    }
+    
+    .service-card {
+        padding: 25px 20px;
+    }
+    
+    .service-card-header {
+        gap: 15px;
+    }
+    
+    .service-icon {
+        width: 55px;
+        height: 55px;
+    }
+    
+    .service-card-title {
+        font-size: 22px;
+    }
+    
+    .services-cta {
+        padding: 50px 0;
+    }
+    
+    .cta-title {
+        font-size: 26px;
+        padding: 0 15px;
+    }
+    
+    .cta-description {
+        font-size: 15px;
+        padding: 0 15px;
+    }
+    
+    .cta-buttons {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+        padding: 0 15px;
+    }
+    
+    .cta-primary-btn, .cta-secondary-btn {
+        width: 100%;
+        max-width: 300px;
+        padding: 14px 25px;
+        font-size: 15px;
+        min-width: unset;
+    }
+}
+
+/* Small Mobile (320px to 424px) */
+@media (max-width: 425px) {
+    .services-header {
+        padding: 45px 0 30px;
+        margin-top: 70px;
+    }
+    
+    .services-title {
+        font-size: 28px;
+        padding: 0 10px;
+    }
+    
+    .services-subtitle {
+        font-size: 14px;
+        padding: 0 10px;
+    }
+    
+    .services-cta-btn {
+        padding: 14px 25px;
+        font-size: 14px;
+    }
+    
+    .services-grid {
+        grid-template-columns: 1fr;
+        gap: 18px;
+        padding: 0 10px;
+    }
+    
+    .service-card {
+        padding: 22px 18px;
+    }
+    
+    .service-card-header {
+        gap: 12px;
+        margin-bottom: 20px;
+        padding-bottom: 15px;
+    }
+    
+    .service-icon {
+        width: 50px;
+        height: 50px;
+        border-radius: 12px;
+    }
+    
+    .service-icon i {
+        font-size: 24px;
+    }
+    
+    .service-card-title {
+        font-size: 20px;
+    }
+    
+    .service-features li {
+        font-size: 14px;
+        margin-bottom: 12px;
+    }
+    
+    .service-enquiry-btn {
+        padding: 12px 20px;
+        font-size: 14px;
+    }
+    
+    .services-cta {
+        padding: 45px 0;
+    }
+    
+    .cta-title {
+        font-size: 24px;
+        padding: 0 10px;
+    }
+    
+    .cta-description {
+        font-size: 14px;
+        padding: 0 10px;
+        margin-bottom: 25px;
+    }
+    
+    .cta-buttons {
+        flex-direction: column;
+        align-items: center;
+        gap: 12px;
+        padding: 0 10px;
+    }
+    
+    .cta-primary-btn, .cta-secondary-btn {
+        width: 100%;
+        max-width: 280px;
+        padding: 14px 25px;
+        font-size: 14px;
+        min-width: unset;
+    }
+}
+
+/* Extra Small Mobile (below 320px) */
+@media (max-width: 319px) {
+    .services-header {
+        padding: 40px 0 25px;
+        margin-top: 65px;
+    }
+    
+    .services-title {
+        font-size: 24px;
+    }
+    
+    .services-subtitle {
+        font-size: 13px;
+    }
+    
+    .services-cta-btn {
+        padding: 12px 20px;
+        font-size: 13px;
+    }
+    
+    .services-grid {
+        gap: 15px;
+        padding: 0 8px;
+    }
+    
+    .service-card {
+        padding: 20px 15px;
+    }
+    
+    .service-card-title {
+        font-size: 18px;
+    }
+    
+    .service-features li {
+        font-size: 13px;
+    }
+    
+    .services-cta {
+        padding: 40px 0;
+    }
+    
+    .cta-title {
+        font-size: 22px;
+    }
+    
+    .cta-description {
+        font-size: 13px;
+    }
+    
+    .cta-primary-btn, .cta-secondary-btn {
+        max-width: 260px;
+        padding: 12px 20px;
+        font-size: 13px;
+    }
+}

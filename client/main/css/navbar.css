@@ -1,0 +1,345 @@
+/* NAVBAR STYLES - COMPLETE */
+:root {
+    --black: #0d0d0d;
+    --black-soft: #141414;
+    --gold: #f2c94c;
+    --gold-soft: #f7d774;
+    --white: #ffffff;
+    --text-muted: #cccccc;
+}
+
+.navbar {
+    background: linear-gradient(135deg, var(--black) 0%, var(--black-soft) 100%);
+    height: 80px;
+    display: flex;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    width: 100%;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    border-bottom: 3px solid var(--gold);
+}
+
+.nav-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Brand Logo */
+.brand {
+    font-size: 24px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    display: flex;
+    align-items: center;
+}
+
+.brand-gold {
+    color: var(--gold);
+    text-shadow: 0 2px 4px rgba(242, 201, 76, 0.3);
+    margin-right: 5px;
+}
+
+.brand-white {
+    color: var(--white);
+    font-weight: 600;
+}
+
+/* Desktop Navigation */
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.nav-link {
+    color: var(--white);
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    position: relative;
+    padding: 8px 0;
+}
+
+.nav-link:hover {
+    color: var(--gold);
+}
+
+.nav-link.active {
+    color: var(--gold);
+    font-weight: 600;
+}
+
+.nav-link.active::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: var(--gold);
+    border-radius: 2px;
+}
+
+/* CTA Button */
+.nav-cta-btn {
+    background: var(--gold);
+    color: var(--black);
+    text-decoration: none;
+    padding: 12px 28px;
+    border-radius: 8px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(242, 201, 76, 0.3);
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.nav-cta-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(242, 201, 76, 0.4);
+}
+
+/* Mobile Menu Button (Three Lines/Hamburger) */
+/* DEFAULT: Visible on mobile/tablet */
+.mobile-menu-btn {
+    display: none; /* Hidden by default on desktop */
+    background: none;
+    border: none;
+    color: var(--white);
+    font-size: 24px;
+    cursor: pointer;
+    padding: 8px;
+    transition: all 0.3s ease;
+    z-index: 1002;
+}
+
+.mobile-menu-btn:hover {
+    color: var(--gold);
+}
+
+/* IMPORTANT: When menu is open, hide hamburger button */
+.mobile-menu-btn.hidden {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+}
+
+/* Mobile Navigation Overlay */
+.mobile-nav-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 999;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+}
+
+.mobile-nav-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Mobile Navigation */
+.mobile-nav {
+    position: fixed;
+    top: 0;
+    right: -320px;
+    width: 300px;
+    height: 100vh;
+    background: var(--black);
+    z-index: 1000;
+    transition: right 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    display: flex;
+    flex-direction: column;
+    box-shadow: -5px 0 30px rgba(0, 0, 0, 0.3);
+}
+
+.mobile-nav.active {
+    right: 0;
+}
+
+.mobile-nav-header {
+    padding: 20px;
+    background: var(--black-soft);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.mobile-brand {
+    font-size: 20px;
+    font-weight: 600;
+    display: flex;
+}
+
+.mobile-brand .brand-gold {
+    margin-right: 5px;
+}
+
+/* Mobile Close Button (Cross/X) */
+/* DEFAULT: Hidden initially */
+.mobile-close-btn {
+    background: none;
+    border: none;
+    color: var(--white);
+    font-size: 22px;
+    cursor: pointer;
+    padding: 5px;
+    transition: all 0.3s ease;
+    opacity: 0;
+    visibility: hidden;
+}
+
+/* When mobile menu is active, show cross button */
+.mobile-nav.active .mobile-close-btn {
+    opacity: 1;
+    visibility: visible;
+}
+
+.mobile-close-btn:hover {
+    color: var(--gold);
+}
+
+.mobile-nav-content {
+    flex: 1;
+    padding: 20px;
+    overflow-y: auto;
+}
+
+.mobile-nav-link {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    color: var(--white);
+    text-decoration: none;
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    transition: all 0.3s ease;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.mobile-nav-link:hover,
+.mobile-nav-link.active {
+    background: rgba(242, 201, 76, 0.15);
+    color: var(--gold);
+}
+
+.mobile-nav-link i {
+    width: 20px;
+    text-align: center;
+    font-size: 18px;
+}
+
+.mobile-cta-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    background: var(--gold);
+    color: var(--black);
+    text-decoration: none;
+    padding: 15px;
+    border-radius: 8px;
+    margin: 20px 0;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    text-align: center;
+}
+
+.mobile-cta-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(242, 201, 76, 0.4);
+}
+
+.mobile-nav-footer {
+    padding: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    background: rgba(0, 0, 0, 0.3);
+}
+
+.mobile-contact-info {
+    margin-bottom: 15px;
+}
+
+.mobile-contact-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--text-muted);
+    font-size: 14px;
+    margin-bottom: 8px;
+}
+
+.mobile-contact-item i {
+    color: var(--gold);
+    width: 16px;
+}
+
+/* RESPONSIVE DESIGN */
+@media (max-width: 768px) {
+    /* Hide desktop navigation on mobile */
+    .nav-links {
+        display: none;
+    }
+    
+    /* Show mobile menu button on mobile/tablet */
+    .mobile-menu-btn {
+        display: block;
+        opacity: 1;
+        visibility: visible;
+    }
+    
+    /* Adjust navbar height for mobile */
+    .navbar {
+        height: 70px;
+    }
+    
+    .nav-container {
+        padding: 0 15px;
+    }
+    
+    .brand {
+        font-size: 20px;
+    }
+    
+    .brand-gold {
+        margin-right: 4px;
+    }
+}
+
+@media (max-width: 480px) {
+    .mobile-nav {
+        width: 280px;
+    }
+    
+    .brand {
+        font-size: 18px;
+    }
+    
+    .brand-gold {
+        margin-right: 3px;
+    }
+}
+
+/* Prevent body scroll when menu is open */
+body.no-scroll {
+    overflow: hidden;
+}
