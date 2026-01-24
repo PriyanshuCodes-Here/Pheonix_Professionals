@@ -1,38 +1,32 @@
 const express = require("express");
 const cors = require("cors");
-const path = require("path"); // ✅ NEW (safe)
+const path = require("path");
+
 const contactRoutes = require("./routes/contact.routes");
 
 const app = express();
 
 // ===============================
-// CORS Configuration
-// ===============================
-const corsOptions = {
-  origin: process.env.CLIENT_URL || "http://localhost:3000",
-  credentials: true,
-  optionsSuccessStatus: 200
-};
-
-// ===============================
 // Middleware
 // ===============================
-app.use(cors(corsOptions));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 // ===============================
-// 🔥 SERVE FRONTEND (NEW - SAFE)
+// CORS (SAFE for same-origin + local dev)
 // ===============================
 app.use(
-  express.static(
-    path.join(__dirname, "../client/main")
-  )
+  cors({
+    origin: process.env.CLIENT_URL || true,
+    credentials: true
+  })
 );
 
 // ===============================
-// Health Check Route (UNCHANGED)
+// API ROUTES (ALWAYS FIRST)
 // ===============================
+app.use("/api/contact", contactRoutes);
+
 app.get("/api/health", (req, res) => {
   res.status(200).json({
     status: "success",
@@ -42,38 +36,39 @@ app.get("/api/health", (req, res) => {
 });
 
 // ===============================
-// API Routes (UNCHANGED)
+// SERVE FRONTEND (STATIC)
 // ===============================
-app.use("/api/contact", contactRoutes);
+const clientPath = path.join(__dirname, "../client/main");
+app.use(express.static(clientPath));
 
 // ===============================
-// 🔥 DEFAULT ROUTE (NEW - SAFE)
+// FRONTEND FALLBACK (IMPORTANT)
 // ===============================
-app.get("/", (req, res) => {
-  res.sendFile(
-    path.join(__dirname, "../client/main/index.html")
-  );
+app.get("*", (req, res) => {
+  // ❌ Never serve index.html for API routes
+  if (req.path.startsWith("/api")) {
+    return res.status(404).json({
+      success: false,
+      message: "API route not found"
+    });
+  }
+
+  res.sendFile(path.join(clientPath, "index.html"));
 });
 
 // ===============================
-// 404 Handler (UNCHANGED)
-// ===============================
-app.use("*", (req, res) => {
-  res.status(404).json({
-    status: "error",
-    message: "Route not found"
-  });
-});
-
-// ===============================
-// Error Handler (UNCHANGED)
+// GLOBAL ERROR HANDLER
 // ===============================
 app.use((err, req, res, next) => {
-  console.error("Server Error:", err);
+  console.error("❌ Server Error:", err);
+
   res.status(500).json({
-    status: "error",
+    success: false,
     message: "Internal server error",
-    error: process.env.NODE_ENV === "development" ? err.message : undefined
+    error:
+      process.env.NODE_ENV === "development"
+        ? err.message
+        : undefined
   });
 });
 

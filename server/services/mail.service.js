@@ -1,10 +1,13 @@
-const transporter = require("../config/mail.config");
+const { Resend } = require("resend");
+
+// Initialize Resend
+const resend = new Resend(process.env.RESEND_API_KEY);
 
 class MailService {
   static async sendContactEmail(formData) {
     const { name, email, phone, subject, message } = formData;
 
-    // 🔎 LOG 1: Incoming Data
+    // 🔎 LOG: Incoming data
     console.log("📥 Incoming contact form data:", {
       name,
       email,
@@ -14,9 +17,6 @@ class MailService {
     });
 
     try {
-      // ===============================
-      // HTML EMAIL TEMPLATE
-      // ===============================
       const htmlTemplate = `
         <!DOCTYPE html>
         <html>
@@ -34,7 +34,7 @@ class MailService {
           <div class="container">
             <div class="header">
               <h2>📩 New Client Enquiry</h2>
-              <p>Phoenix Professionals</p>
+              <p>${process.env.COMPANY_NAME}</p>
             </div>
 
             <div class="content">
@@ -56,20 +56,19 @@ class MailService {
 
             <div class="footer">
               <p>Submitted via ${process.env.COMPANY_WEBSITE}</p>
-              <p>© ${new Date().getFullYear()} Phoenix Professionals</p>
+              <p>© ${new Date().getFullYear()} ${process.env.COMPANY_NAME}</p>
             </div>
           </div>
         </body>
         </html>
       `;
 
-      // ===============================
-      // MAIL OPTIONS (GMAIL SMTP)
-      // ===============================
-      const mailOptions = {
-        from: `"${process.env.COMPANY_NAME}" <${process.env.SMTP_USER}>`,
-        to: process.env.ADMIN_EMAIL,
-        replyTo: email,
+      console.log("📤 Sending email via RESEND to:", process.env.ADMIN_EMAIL);
+
+      const { data, error } = await resend.emails.send({
+        from: `${process.env.COMPANY_NAME} <onboarding@resend.dev>`,
+        to: [process.env.ADMIN_EMAIL],
+        reply_to: email,
         subject: `New Enquiry: ${subject} | ${process.env.COMPANY_NAME}`,
         html: htmlTemplate,
         text: `
@@ -83,23 +82,21 @@ Subject: ${subject}
 Message:
 ${message}
         `
-      };
+      });
 
-      // 🔎 LOG 2
-      console.log("📤 Sending email to:", process.env.ADMIN_EMAIL);
+      if (error) {
+        console.error("❌ Resend API error:", error);
+        throw error;
+      }
 
-      const info = await transporter.sendMail(mailOptions);
+      console.log("✅ Email sent successfully via RESEND");
+      console.log("📨 Resend Message ID:", data.id);
 
-      // ✅ SUCCESS LOGS
-      console.log("✅ Email sent successfully via Gmail SMTP");
-      console.log("📨 Message ID:", info.messageId);
-      console.log("📬 Accepted:", info.accepted);
-
-      return info;
+      return data;
 
     } catch (error) {
-      console.error("❌ Email sending failed");
-      console.error("🔴 Error message:", error.message);
+      console.error("❌ Email sending failed (RESEND)");
+      console.error("🔴 Error:", error.message || error);
       throw error;
     }
   }

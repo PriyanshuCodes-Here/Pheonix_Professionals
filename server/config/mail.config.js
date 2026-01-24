@@ -1,21 +1,21 @@
 const nodemailer = require("nodemailer");
 
 const transporter = nodemailer.createTransport({
-  host: process.env.SMTP_HOST,
-  port: Number(process.env.SMTP_PORT),
-  secure: false, // TLS
+  host: "smtp.resend.com",
+  port: 587,
+  secure: false, // STARTTLS
   auth: {
-    user: process.env.SMTP_USER,
-    pass: process.env.SMTP_PASS
+    user: "resend",
+    pass: process.env.RESEND_API_KEY
   }
 });
 
-// Verify Gmail SMTP
+// Verify SMTP connection
 transporter.verify((error) => {
   if (error) {
-    console.error("❌ Gmail SMTP connection failed:", error);
+    console.error("❌ Resend SMTP connection failed:", error);
   } else {
-    console.log("✅ Gmail SMTP is ready to send emails");
+    console.log("✅ Resend SMTP is ready to send emails");
   }
 });
 

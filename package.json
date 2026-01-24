@@ -3,23 +3,19 @@
   "version": "1.0.0",
   "description": "Phoenix Professionals official website backend and frontend server",
   "private": true,
-
   "scripts": {
     "dev": "nodemon server/server.js",
     "start": "node server/server.js"
   },
-
   "engines": {
     "node": ">=18.0.0"
   },
-
   "dependencies": {
     "cors": "^2.8.5",
     "dotenv": "^16.4.5",
     "express": "^4.21.2",
-    "nodemailer": "^6.9.15"
+    "resend": "^6.8.0"
   },
-
   "devDependencies": {
     "nodemon": "^3.1.11"
   }
